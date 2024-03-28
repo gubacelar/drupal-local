@@ -22,7 +22,7 @@ services:
       - internal
       - external
     volumes:
-      - ./drupal-data:/var/www/html
+      - ./drupal:/opt/drupal
   
   webserver:
     image: nginx:1.25.4-alpine
@@ -33,7 +33,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./drupal-data:/var/www/html
+      - ./drupal:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
     networks:
