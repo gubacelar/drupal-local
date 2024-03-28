@@ -30,7 +30,7 @@ To get your Docker environment up and running, follow these steps:
 To build and start your containers for the first time, run:
 
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
 
 This command builds the Drupal image as defined in your Dockerfile (if you're using a custom Dockerfile), and starts all the containers defined in docker-compose.yml.
