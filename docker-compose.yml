@@ -8,12 +8,14 @@ services:
     restart: unless-stopped
     env_file: .env
     volumes:
-      - db-data:/var/lib/mysql
+      - ./db-data:/var/lib/mysql
     networks:
       - internal
   
   drupal:
-    image: drupal:10.2.4-fpm-alpine
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
     container_name: drupal
     depends_on:
       - mysql
@@ -33,21 +35,21 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./drupal/web:/var/www/html
+      - ./drupal:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
-      - certbot-etc:/etc/letsencrypt
+      # - certbot-etc:/etc/letsencrypt
     networks:
       - external
   
-  certbot:
-    depends_on:
-      - webserver
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - drupal-data:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email sammy@your_domain --agree-tos --no-eff-email --staging -d your_domain -d www.your_domain
+  # certbot:
+  #   depends_on:
+  #     - webserver
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - certbot-etc:/etc/letsencrypt
+  #     - drupal-data:/var/www/html
+  #   command: certonly --webroot --webroot-path=/var/www/html --email sammy@your_domain --agree-tos --no-eff-email --staging -d your_domain -d www.your_domain
 
 networks:
   external:
