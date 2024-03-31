@@ -20,6 +20,14 @@ This project sets up a Docker environment for a Drupal site, using MySQL as the 
 2. Create a `.env` file in the root of the project with the necessary environment variables.
 3. Run `docker-compose up -d` to start all services in detached mode.
 
+.env sample
+```bash
+MYSQL_ROOT_PASSWORD=root_password
+MYSQL_DATABASE=drupal
+MYSQL_USER=drupal_database_user
+MYSQL_PASSWORD=drupal_database_password
+```
+
 ## Accessing Containers
 
 To access any container, use the `docker exec` command. For example, to access the MySQL container:
