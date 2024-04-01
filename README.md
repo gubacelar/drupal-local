@@ -40,7 +40,7 @@ docker exec -it mysql mysql -u drupal_database_user -p
 For the Drupal container:
 
 ```bash
-docker-compose exec drupal sh
+docker-compose exec drupal /bin/bash
 ```
 
 ## Starting and Stopping Containers
