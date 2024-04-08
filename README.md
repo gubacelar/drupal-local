@@ -26,7 +26,18 @@ MYSQL_ROOT_PASSWORD=root_password
 MYSQL_DATABASE=drupal
 MYSQL_USER=drupal_database_user
 MYSQL_PASSWORD=drupal_database_password
+USER_UID=<your-user-uid>
+USER_GID=<your-user-gid>
 ```
+
+
+To find your USER_UID and USER_GID on a Unix-like system, run:
+```bash
+id -u <your-username>
+id -g <your-username>
+```
+
+Replace <your-username> with your actual username. These commands will output your user ID (UID) and group ID (GID), respectively. Use these values for USER_UID and USER_GID in the .env file.
 
 ## Accessing Containers
 
