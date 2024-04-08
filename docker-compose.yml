@@ -16,6 +16,9 @@ services:
     build:
       context: ./docker
       dockerfile: Dockerfile
+      args:
+        USER_UID: ${USER_UID}
+        USER_GID: ${USER_GID}
     container_name: drupal
     depends_on:
       - mysql
@@ -41,16 +44,6 @@ services:
     networks:
       - external
   
-  # certbot:
-  #   depends_on:
-  #     - webserver
-  #   image: certbot/certbot
-  #   container_name: certbot
-  #   volumes:
-  #     - certbot-etc:/etc/letsencrypt
-  #     - drupal-data:/var/www/html
-  #   command: certonly --webroot --webroot-path=/var/www/html --email sammy@your_domain --agree-tos --no-eff-email --staging -d your_domain -d www.your_domain
-
 networks:
   external:
     driver: bridge

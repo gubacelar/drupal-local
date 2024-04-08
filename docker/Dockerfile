@@ -68,6 +68,16 @@ WORKDIR /opt/drupal
 
 ENV PATH=${PATH}:/opt/drupal/vendor/bin
 
+
+# Argumentos para UID e GID que podem ser fornecidos na construção
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+# Atualiza o UID e GID do www-data para corresponder ao UID e GID fornecidos
+RUN apk add --no-cache shadow && \
+    usermod -u ${USER_UID} www-data && \
+    groupmod -g ${USER_GID} www-data
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
