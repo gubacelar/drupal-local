@@ -44,17 +44,25 @@ COPY --from=composer:2 /usr/bin/composer /usr/local/bin/
 ENV DRUPAL_VERSION 10.2.4
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Install curl, bash, and nvm
+# Install curl, bash, git, and nvm
 RUN set -eux; \
-    apk add --no-cache curl bash; \
+    apk add --no-cache curl bash git libstdc++ coreutils; \
     touch ~/.bashrc; \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash; \
     echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc; \
     echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc; \
-    echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' >> ~/.bashrc
+    echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' >> ~/.bashrc; \
+    echo 'export NVM_NODEJS_ORG_MIRROR=https://unofficial-builds.nodejs.org/download/release' >> ~/.bashrc
 
 # Change the default shell to bash
 SHELL ["/bin/bash", "-c"]
+
+# Load nvm and install specific Node.js version
+RUN source ~/.bashrc && \
+    nvm_get_arch() { nvm_echo "x64-musl"; } && \
+    nvm install 20.12.1 && \
+    nvm use 20.12.1 && \
+    nvm alias default 20.12.1
 
 WORKDIR /opt/drupal
 
