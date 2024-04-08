@@ -20,6 +20,12 @@
 /drupal/web/sites/*/files-public
 /drupal/web/sites/*/files-private
 
+/drupal/sites/*/files
+/drupal/sites/*/public
+/drupal/sites/*/private
+/drupal/sites/*/files-public
+/drupal/sites/*/files-private
+
 # Ignore paths that may contain temporary files
 /drupal/web/sites/*/translations
 /drupal/web/sites/*/tmp
