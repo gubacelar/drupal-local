@@ -14,7 +14,10 @@ if is_directory_empty; then
     echo "Directory $DRUPAL_DIR is empty. Installing Drupal ${DRUPAL_VERSION}..."
     composer create-project --no-interaction "drupal/recommended-project:${DRUPAL_VERSION}" $DRUPAL_DIR
 else
-    echo "Directory $DRUPAL_DIR is not empty. Skipping Drupal installation."
+    echo "Directory $DRUPAL_DIR is not empty. Checking for composer dependencies..."
+    # Navigate to the Drupal directory and run composer install
+    cd $DRUPAL_DIR
+    composer install --no-interaction
 fi
 
 # Set file permissions
