@@ -1,0 +1,22 @@
+uuid: 3a41067f-b737-48eb-a9ee-15bcc12a0b8b
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - Faros
+_core:
+  default_config_hash: LcOIVT581jWJyNBhqQh14hR9XtmPUnCjddUX6cgzwRw
+id: Faros_content
+theme: Faros
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Conteúdo da página principal'
+  label_display: '0'
+  provider: system
+visibility: {  }

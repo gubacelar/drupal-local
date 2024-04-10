@@ -1,0 +1,20 @@
+uuid: 5f7fff04-6422-49dc-8204-f5a233e596d6
+langcode: pt-br
+status: true
+dependencies:
+  theme:
+    - Faros
+_core:
+  default_config_hash: sZvkIHxAdona9Dr48MVAwkwCMpyFhK9krfAGV_j_dwY
+id: Faros_local_actions
+theme: Faros
+region: header
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Ações primárias do administrador'
+  label_display: '0'
+  provider: core
+visibility: {  }

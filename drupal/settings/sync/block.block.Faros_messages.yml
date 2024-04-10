@@ -1,0 +1,22 @@
+uuid: dabed7af-1cc2-4219-b1ff-b3749e9595d6
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - Faros
+_core:
+  default_config_hash: v784pI2a-rXDF04a6OFaleGTiYXlBOxEYDUFyNGOio4
+id: Faros_messages
+theme: Faros
+region: header
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Mensagens de status'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: fa1aea83-92bb-4577-b065-ac18a2b526ee
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - Faros
+_core:
+  default_config_hash: QYr4e2ZVv9yFuG-BsaZlChp0h4MMQ5SR6BLUHvmKwWA
+id: Faros_main_menu
+theme: Faros
+region: navbar_left
+weight: -5
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navegação principal'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

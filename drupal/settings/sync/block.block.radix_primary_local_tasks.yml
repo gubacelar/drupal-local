@@ -1,0 +1,22 @@
+uuid: d8bbdb23-f9df-4a55-a3a5-b5fe40cc4211
+langcode: pt-br
+status: true
+dependencies:
+  theme:
+    - radix
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: radix_primary_local_tasks
+theme: radix
+region: navbar_branding
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Abas primárias'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

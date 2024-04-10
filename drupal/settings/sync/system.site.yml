@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: pt-br
+uuid: 89f737a3-32f9-4f6c-b71d-1427e4b28420
+name: Faros
+mail: faros@ielsc.org.br
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: pt-br

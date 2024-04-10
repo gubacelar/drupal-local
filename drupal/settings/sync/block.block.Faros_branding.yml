@@ -1,0 +1,25 @@
+uuid: 0d19cb53-65dd-4dd1-9de8-7ae1712947fe
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - Faros
+_core:
+  default_config_hash: L5A_Z7NYtpkUJjDm074KapVAKobYznTpn0r0JBHDRj4
+id: Faros_branding
+theme: Faros
+region: navbar_branding
+weight: -1
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Definição de marca do site'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

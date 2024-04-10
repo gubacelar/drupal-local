@@ -1,0 +1,22 @@
+uuid: 3bf67453-39bc-4a1b-a3b8-9d322bb59deb
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - Faros
+_core:
+  default_config_hash: 0hVT-LDykdRf6KZvKQ5-SQDF4d4pQtZEtd04wf8vwqE
+id: Faros_breadcrumbs
+theme: Faros
+region: header
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

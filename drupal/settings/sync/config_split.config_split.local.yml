@@ -1,0 +1,20 @@
+uuid: 30301722-5672-48ac-b88b-1a3d62981b17
+langcode: pt-br
+status: true
+dependencies: {  }
+id: local
+label: Local
+description: 'Config split for local environment.'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../settings/faros/local
+module:
+  reroute_email: 0
+  stage_file_proxy: 0
+theme: {  }
+complete_list:
+  - dblog.settings
+partial_list:
+  - smtp.settings
